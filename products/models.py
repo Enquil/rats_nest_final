@@ -1,7 +1,7 @@
 from django.db import models
 
 
-class common(models.Model):
+class Common(models.Model):
 
     name = models.CharField(max_length=254)
 
@@ -9,7 +9,7 @@ class common(models.Model):
         abstract = True
 
 
-class Brand(common):
+class Brand(Common):
 
     class Meta:
         verbose_name_plural = 'Brands'
@@ -17,7 +17,7 @@ class Brand(common):
     friendly_name = models.CharField(max_length=254, null=True, blank=True)
 
 
-class Domain(common):
+class Domain(Common):
 
     class Meta:
         verbose_name_plural = 'Domains'
@@ -25,7 +25,7 @@ class Domain(common):
     friendly_name = models.CharField(max_length=254, null=True, blank=True)
 
 
-class Category(common):
+class Category(Common):
 
     class Meta:
         verbose_name_plural = 'Categories'
@@ -40,7 +40,7 @@ class Category(common):
         return self.friendly_name
 
 
-class Product(common):
+class Product(Common):
 
     class Meta:
         verbose_name_plural = 'Products'
